@@ -56,7 +56,6 @@ const PROFILE = {
 const LINKS = {
   github: "https://github.com/dashboard",
   linkedin: "https://www.linkedin.com/in/ghulam-mustafa-620142380/",
-  website: "https://yourdomain.com",
 };
 
 // ------------------------- ICON MAP --------------------------
@@ -273,9 +272,6 @@ export default function Portfolio() {
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
               <span className="inline-flex items-center gap-1">
                 <MapPin className="h-4 w-4" /> {PROFILE.location}
-              </span>
-              <span className="inline-flex items-center gap-1">
-                <Globe className="h-4 w-4" /> <a href={LINKS.website} target="_blank" className="hover:underline">Portfolio Site</a>
               </span>
             </div>
           </motion.div>

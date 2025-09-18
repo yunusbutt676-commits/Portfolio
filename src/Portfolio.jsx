@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { BrainCircuit , Workflow , Eye , Download } from "lucide-react";
+import UpworkReviews from "./UpworkReviews"; 
+
 import {
   Github,
   Linkedin,
@@ -24,7 +27,9 @@ import {
   SiMongodb,
   SiPython,
   SiDjango,
+  SiFlask,   
   SiPhp,
+  SiTypescript,
   SiLaravel,
   SiJquery,
   SiMysql,
@@ -34,7 +39,15 @@ import {
   SiVite,
   SiGit,
   SiGithub,
-  SiApache,
+  SiDocker,      
+  SiRender,     
+  SiVercel,      
+  SiFastapi,    
+  SiTensorflow,  
+  SiPytorch,   
+  SiScikitlearn,
+  SiPandas,
+  SiNumpy,
   SiJavascript,
   SiHtml5,
   SiCss3,
@@ -69,10 +82,13 @@ const SKILL_ICONS = {
   MongoDB: <SiMongodb className="text-green-500" />,
   Python: <SiPython className="text-purple-500" />,
   Django: <SiDjango className="text-green-700" />,
+  Flask: <SiFlask className="text-gray-700" />,           
+  FastAPI: <SiFastapi className="text-green-500" />,
   PHP: <SiPhp className="text-indigo-600" />,
   "Core-PHP": <SiPhp className="text-indigo-400" />,
   JQuery: <SiJquery className="text-blue-400" />,
   Laravel: <SiLaravel className="text-red-500" />,
+  TypeScript: <SiTypescript className="text-blue-600" />,
   MySQL: <SiMysql className="text-blue-600" />,
   TailwindCSS: <SiTailwindcss className="text-sky-500" />,
   Bootstrap: <SiBootstrap className="text-purple-600" />,
@@ -80,7 +96,17 @@ const SKILL_ICONS = {
   Vite: <SiVite className="text-yellow-400" />,
   Gitbash: <SiGit className="text-red-500" />,
   GitHub: <SiGithub className="text-gray-900 dark:text-white" />,
-  Apache: <SiApache className="text-red-700" />,
+  Docker: <SiDocker className="text-blue-500" />,          
+  Render: <SiRender className="text-purple-600" />,       
+  Vercel: <SiVercel className="text-black dark:text-white" />, 
+  TensorFlow: <SiTensorflow className="text-orange-500" />,  
+  "RESTful APIs": <Workflow className="text-purple-500" />, 
+  PyTorch: <SiPytorch className="text-red-600" />, 
+  "Computer Vision": <Sparkles className="text-pink-500" />,
+  "Scikit-learn": <SiScikitlearn className="text-blue-400" />,
+  Pandas: <SiPandas className="text-purple-500" />,
+  NumPy: <SiNumpy className="text-blue-500" />,
+  NLP: <BrainCircuit className="text-pink-500" />,
   "JavaScript (ES6+)": <SiJavascript className="text-yellow-400" />,
   HTML5: <SiHtml5 className="text-orange-500" />,
   CSS3: <SiCss3 className="text-blue-500" />,
@@ -100,8 +126,11 @@ const SKILLS = {
   backend: [
     "Node.js",
     "Express.js",
+    "TypeScript",
     "Python",
     "Django",
+    "Flask",      
+    "FastAPI",   
     "PHP",
     "Core-PHP",
     "JQuery",
@@ -109,7 +138,8 @@ const SKILLS = {
     "RESTful APIs",
   ],
   database: ["MongoDB", "MySQL"],
-  tools: ["Gitbash", "GitHub", "Vite", "Apache", "Postman"],
+  tools: ["Gitbash", "GitHub", "Vite", "Vercel", "Render", "Docker", "Postman"],
+  ai_ml: ["TensorFlow", "PyTorch", "Computer Vision", "Scikit-learn", "Pandas", "NumPy", "NLP"],
 };
 
 // ------------------------- PROJECTS --------------------------
@@ -149,6 +179,27 @@ const PROJECTS = [
     stack: ["Laravel", "PHP", "MySQL"],
     links: { code: "#" },
   },
+  {
+    name: "NovaLearn-AI",
+    description:
+      "A full-stack AI-powered learning platform with role-based dashboards, course management, and secure payments via Stripe (subscribe/cancel with webhooks). It integrates AI services like an AI tutor (LLM chat), quiz generator, and text summarizer.",
+    stack: ["Node.js", "Express.js", "MongoDB", "TypeScript", "FastAPI", "React"],
+    links: { code: "https://github.com/yunusbutt676-commits/NovaLearn-AI" },
+  },
+  {
+    name: "Job Portal",
+    description:
+      "A full-stack Job Portal built with Flask (backend), React (frontend), and MySQL (database). It supports role-based authentication (Admin/User), CRUD operations on jobs, and an AI-powered job recommendation system using NLP and cosine similarity.",
+    stack: ["React", "Flask", "MySQL"],
+    links: { code: "https://github.com/yunusbutt676-commits/Flask-React" },
+  },
+  {
+    name: "AI Smart Assistant",
+    description:
+      "An advanced AI-powered assistant that blends Computer Vision and LLMs.It detects age, gender, and emotions in real-time via webcam or images.Supports face registration & recognition using embeddings stored in MongoDB.Integrates a context-aware chatbot powered by Groq LLM that adapts to identity & emotions.",
+    stack: ["HTML5", "TailwindCSS", "FastAPI", "MongoDB", "JavaScript (ES6+)", "TensorFlow", "PyTorch", "Computer Vision", "Scikit-learn", "Pandas", "NumPy", "NLP"],
+    links: { code: "https://github.com/yunusbutt676-commits/ai_smart_assistant" },
+  },
 ];
 
 // ------------------------- EXPERIENCE --------------------------
@@ -156,17 +207,19 @@ const EXPERIENCE = [
   {
     role: "Full Stack Developer",
     company: "Geniune Tech Softwares",
-    period: "July 2023 – Aug 2025",
+    period: "July 2023 – Present",
     points: [
-      "Developed scalable Multi stack applications using MERN/MEAN/LARAVEL/PYTHON-DJANGO.",
+      "Developed scalable Multi Stack Web Applications.",
+      "MERN/MEAN/LARAVEL/PYTHON-DJANGO-FLASK-FASTAPI.",
+      "AI/ML Web Integrations.",
       "Implemented secure RESTFUL APIs and optimized DB queries for performance.",
       "Collaborated with design & marketing teams for product launches.",
     ],
   },
   {
     role: "Front End Developer",
-    company: "Shan Tech and Training",
-    period: "June 2022 – Jun 2023",
+    company: "Shan Tech Softwares",
+    period: "June 2022 – May 2023",
     points: [
       "Built responsive web interfaces with React and Tailwind.",
       "Integrated APIs with frontend and optimized user experience.",
@@ -222,7 +275,6 @@ const NavLink = ({ href, children }) => (
 
 // ------------------------- MAIN COMPONENT --------------------------
 export default function Portfolio() {
-  
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-white via-gray-50 to-gray-100 text-gray-900 dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-100">
       {/* Header */}
@@ -235,8 +287,10 @@ export default function Portfolio() {
           <nav className="hidden md:flex items-center gap-6">
             <NavLink href="#skills">Skills</NavLink>
             <NavLink href="#projects">Projects</NavLink>
+            <NavLink href="#ai-ml">AI/ML</NavLink>
             <NavLink href="#experience">Experience</NavLink>
             <NavLink href="#education">Education</NavLink>
+            <NavLink href="#reviews">Testimonials</NavLink> 
             <NavLink href="#contact">Contact</NavLink>
           </nav>
         </div>
@@ -268,7 +322,27 @@ export default function Portfolio() {
               <a href={LINKS.linkedin} target="_blank" rel="noreferrer" className="px-4 py-2 border rounded-lg flex items-center">
                 <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
               </a>
-            </div>
+              {/* View Online */}
+              <a
+                href="/CVS.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-200 text-gray-800 font-medium rounded-lg hover:bg-gray-300 transition"
+              >
+                <Eye className="w-5 h-5" />
+                View CV
+              </a>
+
+              {/* Download */}
+              <a
+                href="/CVS.pdf"
+                download="Ghulam-Mustafa-CV.pdf"
+                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition"
+              >
+                <Download className="w-5 h-5" />
+                Download CV
+              </a>
+            </div>          
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
               <span className="inline-flex items-center gap-1">
                 <MapPin className="h-4 w-4" /> {PROFILE.location}
@@ -308,6 +382,17 @@ export default function Portfolio() {
           </div>
         </div>
       </Section>
+      
+      {/* AI/ML Skills */}
+        <Section id="ai-ml" title="AI / ML Integration" icon={Sparkles}>
+          <div className="flex gap-3 flex-wrap">
+            {SKILLS.ai_ml.map((s) => (
+              <Badge key={s} name={s} />
+            ))}
+          </div>
+        </Section>
+
+      <UpworkReviews />
 
       {/* Projects */}
       <Section id="projects" title="Featured Projects" icon={ExternalLink}>

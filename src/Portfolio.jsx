@@ -61,7 +61,7 @@ const PROFILE = {
   email: "yunusbutt676@gmail.com",
   phone: "+92-304-5478602",
   summary:
-    "Results-driven Full Stack Developer with 2+ years of experience designing and building scalable web applications across MERN, MEAN, LARAVEL Python-Django frameworks. Skilled in developing user-friendly frontends, robust APIs, and secure backend systems with strong focus on performance and clean code. Experienced in working on projects such as course management platforms, expense tracking systems, RESTful APIs, and inventory dashboards, demonstrating versatility across E-Commerce domains. Recognized for problem-solving, adaptability, and delivering projects that align with both technical requirements and business goals.",
+    "Results-driven developer with 2+ years of Full Stack and 1 year of Frontend experience, skilled in building scalable web applications using MERN, MEAN, Laravel, Python (Flask/Django), and RESTful APIs. Proficient in AI/ML integrations with FastAPI, as well as Docker and containerization. Experienced in deploying applications on Vercel and Render. Delivered projects across course management, expense tracking, inventory dashboards, AI Smart Assistant, job portals, and e-commerce platforms. Recognized for problem-solving, adaptability, and writing clean, efficient code.",
   avatar:
     "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=600&auto=format&fit=crop",
 };
@@ -275,8 +275,9 @@ const NavLink = ({ href, children }) => (
 
 // ------------------------- MAIN COMPONENT --------------------------
 export default function Portfolio() {
+
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-white via-gray-50 to-gray-100 text-gray-900 dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-100">
+    <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-white via-gray-50 to-gray-100 text-gray-900 dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-100 transition-colors duration-500">
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-gray-900/80 border-b dark:border-gray-700">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -284,15 +285,17 @@ export default function Portfolio() {
             <Sparkles className="h-5 w-5" />
             <span className="font-semibold">{PROFILE.name}</span>
           </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <NavLink href="#skills">Skills</NavLink>
-            <NavLink href="#projects">Projects</NavLink>
-            <NavLink href="#ai-ml">AI/ML</NavLink>
-            <NavLink href="#experience">Experience</NavLink>
-            <NavLink href="#education">Education</NavLink>
-            <NavLink href="#reviews">Testimonials</NavLink> 
-            <NavLink href="#contact">Contact</NavLink>
-          </nav>
+          <div className="flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-6">
+              <NavLink href="#skills">Skills</NavLink>
+              <NavLink href="#projects">Projects</NavLink>
+              <NavLink href="#ai-ml">AI/ML</NavLink>
+              <NavLink href="#experience">Experience</NavLink>
+              <NavLink href="#education">Education</NavLink>
+              <NavLink href="#reviews">Testimonials</NavLink> 
+              <NavLink href="#contact">Contact</NavLink>
+            </nav>
+          </div>
         </div>
       </header>
 

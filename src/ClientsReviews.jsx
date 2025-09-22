@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-const UPWORK_REVIEWS = [
+const CLIENTS_REVIEWS = [
   {
     client: "Aiden Smith",
     rating: 5,
@@ -35,7 +35,7 @@ const UPWORK_REVIEWS = [
   },
 ];
 
-export default function UpworkReviews() {
+export default function ClientsReviews() {
   const sliderRef = useRef(null);
   const [cardWidth, setCardWidth] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -52,13 +52,13 @@ export default function UpworkReviews() {
   };
 
   const slideNext = () => {
-    const nextIndex = (currentIndex + 1) % UPWORK_REVIEWS.length;
+    const nextIndex = (currentIndex + 1) % CLIENTS_REVIEWS.length;
     setCurrentIndex(nextIndex);
     scrollToIndex(nextIndex);
   };
 
   const slidePrev = () => {
-    const prevIndex = (currentIndex - 1 + UPWORK_REVIEWS.length) % UPWORK_REVIEWS.length;
+    const prevIndex = (currentIndex - 1 + CLIENTS_REVIEWS.length) % CLIENTS_REVIEWS.length;
     setCurrentIndex(prevIndex);
     scrollToIndex(prevIndex);
   };
@@ -68,7 +68,7 @@ export default function UpworkReviews() {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-300 via-cyan-300 to-indigo-400 opacity-10 animate-gradient-slow pointer-events-none"></div>
       <div className="max-w-6xl mx-auto px-4 relative">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-          Upwork Client Reviews
+          Clients Reviews
         </h2>
 
         <button

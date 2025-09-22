@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BrainCircuit , Workflow , Eye , Download } from "lucide-react";
-import UpworkReviews from "./UpworkReviews"; 
+import ClientsReviews from "./ClientsReviews"; 
 
 import {
   Github,
@@ -395,7 +395,7 @@ export default function Portfolio() {
           </div>
         </Section>
 
-      <UpworkReviews />
+      <ClientsReviews />
 
       {/* Projects */}
       <Section id="projects" title="Featured Projects" icon={ExternalLink}>

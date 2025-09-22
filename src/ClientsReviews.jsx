@@ -91,7 +91,7 @@ export default function ClientsReviews() {
           dragConstraints={{ left: -9999, right: 9999 }}
           whileTap={{ cursor: "grabbing" }}
         >
-          {UPWORK_REVIEWS.map((r, i) => (
+          {CLIENTS_REVIEWS.map((r, i) => (
             <motion.div
               key={i}
               className="review-card relative min-w-[280px] bg-white/10 dark:bg-gray-800/20 backdrop-blur-xl border border-white/20 dark:border-gray-700/40 rounded-2xl shadow-lg p-6 flex-shrink-0 transition-transform duration-300 cursor-pointer"
